@@ -1,0 +1,20 @@
+# --------------------------------------------------------------------
+[package]
+# --------------------------------------------------------------------
+name = "my-pretty-failure"
+license = "MIT"
+version = "0.1.0"
+authors = ["Alban Minassian"]
+description = "my-pretty-failure display failure (and context) in an elegant way"
+homepage = "https://github.com/AlbanMinassian/my-pretty-failure"
+repository = "https://github.com/AlbanMinassian/my-pretty-failure"
+keywords = ["format", "failure", "terminal", "print"]
+documentation = "https://docs.rs/my-pretty-failure"
+readme = "README.md"
+
+# --------------------------------------------------------------------
+[dependencies]
+# --------------------------------------------------------------------
+failure = "0.1.3"
+
+
