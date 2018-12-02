@@ -35,8 +35,7 @@ fn myprettyfailure_0002_option() {
     let result = myprettyfailure_option(MyPrettyFailurePrint {
         head: "🔔 error".to_string(),
         separator: "---------------------------------------------------------".to_string(),
-        causedby: "context".to_string()
-    }, &err);
+        causedby: "context".to_string() }, &err); // this indent to upd to 100% coverage
     assert!(result == r#"🔔 error
 ---------------------------------------------------------
 a long err1
