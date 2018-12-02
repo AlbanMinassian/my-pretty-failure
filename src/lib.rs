@@ -10,7 +10,7 @@
 //! ## Example n°1
 //!
 //! With defaut option
-//! ```rust
+//! ```rust,ignore
 //! extern crate my_pretty_failure;
 //! use my_pretty_failure::myprettyfailure;
 
@@ -33,8 +33,8 @@
 //!
 //! ## Example n°2
 //!
-//! With your option
-//! ```rust
+//! With your options
+//! ```rust,ignore
 //! extern crate my_pretty_failure;
 //! use my_pretty_failure::{myprettyfailure_option, MyPrettyFailurePrint};
 //! extern crate yansi; // or ansi_term, colored ...

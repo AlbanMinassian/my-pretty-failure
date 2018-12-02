@@ -2,7 +2,7 @@ extern crate core;
 extern crate failure;
 extern crate my_pretty_failure;
 use my_pretty_failure::{myprettyfailure};
-use failure::{Backtrace, Context, Fail, ResultExt};
+use failure::{Backtrace, Context, Fail};
 use core::fmt::Display;
 use std::fmt;
 
