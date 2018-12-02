@@ -1,6 +1,7 @@
 //! # my-pretty-failure
 //!
 //! [![Build Status](https://travis-ci.org/AlbanMinassian/my-pretty-failure.svg?branch=master)](https://travis-ci.org/AlbanMinassian/my-pretty-failure)
+//! [![codecov](https://codecov.io/gh/AlbanMinassian/my-pretty-failure/branch/master/graph/badge.svg)](https://codecov.io/gh/AlbanMinassian/my-pretty-failure)
 //! [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 //! [![my-pretty-failure Latest Version](https://img.shields.io/crates/v/my-pretty-failure.svg)](https://crates.io/crates/my-pretty-failure)
 //!
@@ -80,7 +81,7 @@ pub struct MyPrettyFailurePrint {
 // -------------------------------------------------------------------
 // print pretty failure message with your options
 // -------------------------------------------------------------------
-/// print errors with you options (and the context of the cascading error) in an elegant way in console
+/// display [failure](https://github.com/rust-lang-nursery/failure) (and context) with *your* options in an elegant way
 // -------------------------------------------------------------------
 pub fn myprettyfailure_option(option: MyPrettyFailurePrint, fail: &Fail) -> String {
     let mut count_context = 0;
@@ -115,7 +116,7 @@ pub fn myprettyfailure_option(option: MyPrettyFailurePrint, fail: &Fail) -> Stri
 // -------------------------------------------------------------------
 // print pretty failure message with default options
 // -------------------------------------------------------------------
-/// print errors with default options (and the context of the cascading error) in an elegant way in console
+/// display [failure](https://github.com/rust-lang-nursery/failure) (and context) with *default* options in an elegant way
 // -------------------------------------------------------------------
 pub fn myprettyfailure(fail: &Fail) -> String {
     myprettyfailure_option(MyPrettyFailurePrint {

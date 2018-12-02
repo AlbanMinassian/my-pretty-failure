@@ -13,7 +13,7 @@ my-pretty-failure display [failure](https://github.com/rust-lang-nursery/failure
 
 ```rust
 [dependencies]
-my-pretty-failure = "0.1.0"
+my-pretty-failure = "0.1.1"
 ```
 
 ## Usage n°1
