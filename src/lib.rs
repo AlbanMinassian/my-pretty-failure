@@ -10,14 +10,19 @@
 //! ## Example n°1
 //!
 //! With defaut option
-//! ```rust,ignore
+//! ```rust
+//! #[macro_use] extern crate failure;
 //! extern crate my_pretty_failure;
 //! use my_pretty_failure::myprettyfailure;
+//! use failure::Fail;
 
 //! fn main() {
-//!     let err = err1().unwrap_err(); // your failure
-//!     println!("{}", myprettyfailure(&err)); // or panic!
+//!     let err3 = format_err!("string error message 1");
+//!     let err2 = err3.context(format_err!("string error message 2"));
+//!     let err1 = err2.context(format_err!("string error message 1"));
+//!     println!("{}", myprettyfailure(&err1));
 //! }
+
 //! ```
 //!  console output
 //! ```console
@@ -35,18 +40,21 @@
 //!
 //! With your options
 //! ```rust,ignore
-//! extern crate my_pretty_failure;
-//! use my_pretty_failure::{myprettyfailure_option, MyPrettyFailurePrint};
-//! extern crate yansi; // or ansi_term, colored ...
+//! #[macro_use] extern crate failure; use failure::Fail;
+//! extern crate my_pretty_failure; use my_pretty_failure::{myprettyfailure_option, MyPrettyFailurePrint};
+//! extern crate yansi; // or ansi_term, colored, term_painter ...
 
 //! fn main() {
-//!     let err = err1().unwrap_err(); // your failure
+//!     let err3 = format_err!("string error message 1");
+//!     let err2 = err3.context(format_err!("string error message 2"));
+//!     let err1 = err2.context(format_err!("string error message 1"));
 //!     println!("{}", myprettyfailure_option(MyPrettyFailurePrint {
-//!         head: format!("🔔 my pretty app catch an {}", yansi::Paint::red("error")),
-//!         separator: "- - - - - - - - - - - - - - - - - - -".to_string(),
+//!         head: format!("🌈 my pretty {} catch an {}", yansi::Paint::white("superApp").bold(), yansi::Paint::red("error").bold()),
+//!         separator: "****************************************".to_string(),
 //!         causedby: "context".to_string(),
-//!     }, &err));
+//!     }, &err1));
 //! }
+
 //! ```
 //!  console output
 //! ```console
