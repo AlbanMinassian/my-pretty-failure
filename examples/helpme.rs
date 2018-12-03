@@ -1,5 +1,5 @@
 extern crate core;
-extern crate failure;
+#[macro_use] extern crate failure;
 extern crate my_pretty_failure;
 use my_pretty_failure::{myprettyfailure};
 use failure::{Backtrace, Context, Fail};
@@ -10,10 +10,19 @@ use std::fmt;
 // helpme
 // -----------------------------------------
 fn main() {
+
+    // basic error
+    let err3 = format_err!("string error message 1");
+    let err2 = err3.context(format_err!("string error message 2"));
+    let err1 = err2.context(format_err!("string error message 1"));
+    println!("{}", myprettyfailure(&err1));
+
+    // advanced error (struct/enum)
     let err3 = ErrTest3Error::from(ErrTest3ErrorKind::ErrKind3); // println!("{:?}", err2);
     let err2 = err3.context(ErrTest2Error::from(ErrTest2ErrorKind::ErrKind2));
     let err1 = err2.context(ErrTest1Error::from(ErrTest1ErrorKind::ErrKind1));
     println!("{}", myprettyfailure(&err1));
+
 }
 
 // ------------------------------------------------------------------------------------
