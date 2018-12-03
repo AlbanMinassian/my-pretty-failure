@@ -35,6 +35,7 @@ fn main() {
 
 ```
 console output
+
 ![screenshoot default](assets/screenshoot_default.png)
 
 
@@ -63,6 +64,7 @@ fn main() {
 
 ```
 console output
+
 ![screenshoot option](assets/screenshoot_option.png)
 
 
